@@ -1,8 +1,11 @@
 "use strict";
 
 var gImg;
+var gBlockName = 'braille';
+
 var unicodeBlocks = {
   'cyrillic': [0x0400, 0x04FF],
+  'arabic': [0x0600, 0x06FF],
   'han': [0x4E00, 0x62FF],
   'kana': [0x3040, 0x30FF],
   'greek': [0x0370, 0x03FF],
@@ -17,7 +20,6 @@ var unicodeBlocks = {
   'braille': [0x2800, 0x28FF],
   'katakana': [0x30A0, 0x30FF],
   'hiragana': [0x3040, 0x309F]
-  
 };
 
 function randHan() {
@@ -117,5 +119,5 @@ function draw() {
   if (gImg) {
     image(gImg, 0, 0, width, height);
   }
-  text(randomString('braille'), width / 4, random(height / 2));
+  text(randomString(gBlockName), width / 4, random(height / 2));
 }
